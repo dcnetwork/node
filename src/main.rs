@@ -1,4 +1,6 @@
 use node::stun::connect::*;
-fn main() {
-    println!("Hello, world!");
+use tokio;
+#[tokio::main]
+async fn main() {
+    DcStunClient::new().start().await;
 }

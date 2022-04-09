@@ -9,4 +9,4 @@ authors = ["Prakash <choudharyprakash066@gmail.com>"]
 webrtc = "0.4.0"
 webrtc-util = "0.5.3"
 tokio-util = "0.7.1"
-
+tokio = { version = "1.17.0", features = ["full"] }
