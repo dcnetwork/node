@@ -123,7 +123,7 @@ pub struct DcNodeInit{
 //
 impl DcNodeInit{
 
-    pub async fn new() -> Self {
+    pub fn new() -> Self {
         let mut pubpath = PathBuf::from(var("HOME").unwrap());
 		pubpath.push(".decchat/public.pem");
 
