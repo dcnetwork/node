@@ -118,7 +118,7 @@ pub struct DcNodeInit{
     pub address: Vec<u8>,          // server's address
 	pub pubkey: EcKey<Public>,     // pubkey of server
 	pub pub_key_vec:Vec<u8>,
-    pub ip: InfoData
+    // pub ip: InfoData
 	/*******EOS*******/
 }
 //
@@ -175,8 +175,7 @@ impl DcNodeInit{
 		Self{
 			address: v.to_vec(),
 			pubkey,
-			pub_key_vec: Vec::from(buf_vec),
-            ip:body
+			pub_key_vec: Vec::from(buf_vec)
         }
  		/*EOF*/
        
