@@ -106,7 +106,7 @@ impl ClientConfig{
 		let c = self.key.private_key_to_pem_passphrase(Cipher::aes_128_cbc(),buffer.as_bytes()).unwrap();
 		println!("\x1b[1m\x1b[28m[\x1b[31mCONFIG\x1b[0m\x1b[1m\x1b[28m]\x1b[0m ~> WRITING \x1b[1m\x1b[33mPRIVATE\x1b[0m KEY TO PEM FILE");
 		f.write(&c);
-		/*EOF*/
+		/*******EOF*******/
 
 	}
 }
@@ -119,7 +119,7 @@ pub struct DcNodeInit{
 	pub pubkey: EcKey<Public>,     // pubkey of server
 	pub pub_key_vec:Vec<u8>,
     pub ip: InfoData
-	/*EOS*/
+	/*******EOS*******/
 }
 //
 impl DcNodeInit{
@@ -168,9 +168,9 @@ impl DcNodeInit{
 
         println!("\x1b[1m\x1b[28m[\x1b[33mINFO\x1b[0m\x1b[1m\x1b[28m]\x1b[0m ~> YOUR \x1b[1m\x1b[32mADDRESS\x1b[0m <\x1b[1m\x1b[33m 0x{} \x1b[0m>",BigNum::from_slice(&v).unwrap().to_hex_str().unwrap());
 
-        let body = reqwest::get("https://ipinfo.io/json?").await.unwrap().json::<InfoData>().await.unwrap();
+        // let body = reqwest::get("https://ipinfo.io/json?").await.unwrap().json::<InfoData>().await.unwrap();
 
-        println!("\x1b[1m\x1b[28m[\x1b[33mINFO\x1b[0m\x1b[1m\x1b[28m]\x1b[0m ~> YOUR \x1b[1m\x1b[32mNODE IP\x1b[0m <\x1b[1m\x1b[33m {} \x1b[0m>",body.ip);
+        // println!("\x1b[1m\x1b[28m[\x1b[33mINFO\x1b[0m\x1b[1m\x1b[28m]\x1b[0m ~> YOUR \x1b[1m\x1b[32mNODE IP\x1b[0m <\x1b[1m\x1b[33m {} \x1b[0m>",body.ip);
 
 		Self{
 			address: v.to_vec(),
