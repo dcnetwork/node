@@ -112,6 +112,7 @@ impl ClientConfig{
 }
 
 //###########################################
+#[derive(Debug,Clone)]
 pub struct DcNodeInit{
 
     pub address: Vec<u8>,          // server's address
@@ -272,6 +273,8 @@ impl DcNodeInit{
     	}
 	/*EOF*/
     }
+
+    
 
 }
 
